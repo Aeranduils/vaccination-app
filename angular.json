@@ -64,18 +64,22 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "vaccination-app:build:production"
+              "browserTarget": "vaccination-app:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "vaccination-app:build:development"
+              "browserTarget": "vaccination-app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+
             }
+            
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vaccination-app:build"
+            "browserTarget": "vaccination-app:build",
           }
         },
         "test": {
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f58102dc-2fe7-49d9-942f-8c9a812778db"
   }
 }

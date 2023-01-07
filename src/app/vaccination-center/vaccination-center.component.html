@@ -1,0 +1,14 @@
+<div class="detail" *ngIf="center">
+    <h2>{{center.name | uppercase}}</h2>
+    <div>{{center.address}}
+        <span>{{center.postalCode}} {{center.city}}</span>
+    </div>
+    <div>Ouvert depuis le {{center.openingDate | date:'dd/MM/Y'}}</div>
+    <div>
+        <button (click)="delete()">Supprimer</button>
+
+    </div> 
+    
+</div>
+
+
