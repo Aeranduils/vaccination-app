@@ -1,5 +1,5 @@
 <div class="detail" *ngIf="center">
-    <h2 [title]="center.name">{{center.name | uppercase}}</h2>
+    <h2 [title]="center.name">{{center.name}}</h2>
     <div>{{center.address}}
         <span>{{center.postalCode}} {{center.city}}</span>
     </div>
@@ -11,8 +11,16 @@
         <label for="name">Nom du centre </label>
         <input id="name" [(ngModel)]="center.name" />
     </div>
+
+    <div>
+        <p></p>
+        <a routerLink="/centers/detail/{{center.id}}">
+            Aller sur la page du centre
+        </a>
+    </div>
     
     <div>
+        <p></p>
         <button (click)="delete()">Supprimer</button>
     </div>
 </div>

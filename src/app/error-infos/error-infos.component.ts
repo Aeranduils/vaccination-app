@@ -8,7 +8,12 @@ import { interval } from 'rxjs/internal/observable/interval';
   templateUrl: './error-infos.component.html',
   styleUrls: ['./error-infos.component.scss']
 })
-export class ErrorInfosComponent implements OnInit, OnDestroy {
+export class ErrorInfosComponent implements OnInit {
+
+  constructor(
+    private readonly http: HttpClient,
+    private readonly router: Router
+  ) { }
 
   infos = '';
   private sub: any;
@@ -17,39 +22,44 @@ export class ErrorInfosComponent implements OnInit, OnDestroy {
   tempsInitial = 0;
   finishedTimer = false;
 
-  constructor(
-    private readonly route: ActivatedRoute,
-    private readonly router: Router
-  ) { }
-
   ngOnInit(): void {
-    console.log('waiting');
-    this.sub = this.route.params.subscribe(params => {
-      this.tempsInitial = +params['temps'];
-    });
-    if(this.tempsInitial === 0) {
-      this.finishedTimer = true;
-    }
-    this.startTimer();
+    this.info()
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-    
+  info() {
+    this.http.get<any>('api/infos/429', {observe: 'response'})
+    .subscribe({
+      next: (resp) => {
+      console.log(resp);
+      console.log(resp.headers.keys());
+      const nbToken =  resp.headers.get('X-Rate-Limit-Remaining')
+      this.infos = `${nbToken} tokens restants`
+    },
+    error:  (err) => {
+      console.error(err);
+      console.log(err.headers.keys());
+      this.temps =  err.headers.get('X-Rate-Limit-Retry-After-Seconds')
+      this.infos = `Réessayer après ${this.temps} secondes`;
+      if (this.temps > 0) {
+        this.startTimer();
+      }
+    }
+    });
   }
 
   startTimer() {
-    const tempsInitial = this.tempsInitial;
-    this.tempsRestant = this.tempsInitial;
+    const tempsInitial = this.temps;
+    this.tempsRestant = this.temps;
     const timer$ = interval(1000);
 
     const sub = timer$.subscribe(async (sec) => {
       sec = sec+1;
       this.tempsRestant = tempsInitial - sec;
-      this.infos = `Réessayer après ${this.tempsInitial} secondes`;
+      this.infos = `Réessayer après ${this.tempsRestant} secondes`;
       if (this.tempsRestant <= 0) {
         sub.unsubscribe();
-        this.finishedTimer = true;
+        await new Promise(f => setTimeout(f, 1000));
+        this.info();
       }
     });
   }
