@@ -18,7 +18,12 @@
         </button>
     </li>
 </ul>
-<!--
+
+<app-vaccination-center [center]="selected"
+    (deleted)="onDeleted($event)">
+</app-vaccination-center>
+
+<!-- 
 <div *ngIf="selected">
     Centre selectionné:
     <h2 [title]="selected.name">{{selected.name | uppercase}}</h2>
@@ -28,11 +33,9 @@
     <div>
         Ouvert depuis le {{selected.openingDate | date:'dd/MM/Y'}}
     </div>
-</div>
+</div> 
 -->
-<app-vaccination-center [center]="selected" 
-    (deleted)="onDeleted($event)">
-</app-vaccination-center>
+
 <!--
 <td>
     <button mat-raised-button color="primary" (click)="info()">Infos</button>

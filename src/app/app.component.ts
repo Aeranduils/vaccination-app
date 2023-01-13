@@ -21,10 +21,10 @@ export class AppComponent implements OnInit {
 
   bucket() {
     this.http.get<any>('api/infos/429', {observe: 'response'}).subscribe({
-    error:  (err) => {
-      console.log(err.status);
-      this.router.navigate(['/infos/429']);
-    }
-  });
+      error:  (err) => {
+        console.log(err.status);
+        this.router.navigate(['/infos/429']);
+      }
+    });
   }
 }
