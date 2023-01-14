@@ -13,8 +13,7 @@ export class VaccinationCenterListComponent implements OnInit {
   searchResult!: VaccinationCenter[];
   selected?: VaccinationCenter;
 
-  searchTermCity?: string;
-  searchTermName?: string;
+  searchTerm?: string;
   search?: String
 
   constructor(private service: VaccinationService) { }
@@ -38,20 +37,15 @@ export class VaccinationCenterListComponent implements OnInit {
     this.selected=center;
   }
 
-  filteredCentersCity(){
-    if (this.searchTermCity === undefined)
-      this.searchResult = this.centers
-    else
-      // searchTerm! permet de dire a TS qu'on est conscient que l'objet peut etre undefined
-      this.searchResult = this.centers.filter(aCenter => aCenter.city.toLowerCase().includes(this.searchTermCity!.toLowerCase().toString()));
-  }
+  filteredCenters(){
+    if (this.searchTerm === undefined)
+      this.searchTerm = ""
 
-  filteredCentersName(){
-    if (this.searchTermName === undefined)
-      this.searchResult = this.centers
-    else
-      // searchTerm! permet de dire a TS qu'on est conscient que l'objet peut etre undefined
-      this.searchResult = this.centers.filter(aCenter => aCenter.name.toLowerCase().includes(this.searchTermName!.toLowerCase().toString()));
+    // searchTerm! permet de dire a TS qu'on est conscient que l'objet peut etre undefined
+    if (this.search == "city")
+      this.searchResult = this.centers.filter(aCenter => aCenter.city.toLowerCase().includes(this.searchTerm!.toLowerCase()));
+    else if (this.search == "name")
+    this.searchResult = this.centers.filter(aCenter => aCenter.name.toLowerCase().includes(this.searchTerm!.toLowerCase().toString()));
   }
 
   selectSearch(search: String){

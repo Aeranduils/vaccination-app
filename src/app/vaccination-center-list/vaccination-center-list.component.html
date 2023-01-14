@@ -9,19 +9,17 @@
 <h2>LISTE DES CENTRES DE VACCINATION</h2>
 
 <div>
-    <button (click)="selectSearch('city')">
+    <button (click)="selectSearch('city'); filteredCenters();">
         Recherche par ville
     </button>
-    <button (click)="selectSearch('name')">
+    <button (click)="selectSearch('name'); filteredCenters();">
         Recherche par nom
     </button>
-    <div *ngIf="search === 'city'">
-        <h3>Recherche par ville</h3>
-        <input [(ngModel)]="searchTermCity" (ngModelChange)="filteredCentersCity()">    
-    </div>
-    <div *ngIf="search === 'name'">
-        <h3>Recherche par nom</h3>
-        <input [(ngModel)]="searchTermName" (ngModelChange)="filteredCentersName()">    
+    <div *ngIf="search !== undefined">
+        <h3 *ngIf="search === 'city'">Recherche par ville</h3>
+        <h3 *ngIf="search === 'name'">Recherche par nom</h3>
+        <input *ngIf="search === 'city' || search === 'name'" 
+            [(ngModel)]="searchTerm" (ngModelChange)="filteredCenters()">    
     </div>
     <ul>
         <li *ngFor="let aCenter of searchResult"
