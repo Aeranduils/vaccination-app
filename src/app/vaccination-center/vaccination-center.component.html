@@ -1,7 +1,8 @@
 <div class="detail" *ngIf="center">
     <h2 [title]="center.name">{{center.name}}</h2>
-    <div>{{center.address}}
-        <span>{{center.postalCode}} {{center.city}}</span>
+    <div>
+        <p>{{center.address}}</p>
+        <p>{{center.postalCode}}, {{center.city}}</p>
     </div>
     <div>
         Ouvert depuis le {{center.openingDate | date:'dd/MM/Y'}}

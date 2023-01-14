@@ -7,21 +7,39 @@
     </li>
 </div> -->
 <h2>LISTE DES CENTRES DE VACCINATION</h2>
-<ul>
-    <li *ngFor="let aCenter of centers"
-        [ngClass]="selected==aCenter ? 'selected' : ''">
 
-        <button 
-            [ngStyle]="{'font-weight' : isSpecialCenter(aCenter) ? 'bold' : 'normal'}"
-            (click)="selectCenter(aCenter)">
-            {{aCenter.name}}
-        </button>
-    </li>
-</ul>
+<div>
+    <button (click)="selectSearch('city')">
+        Recherche par ville
+    </button>
+    <button (click)="selectSearch('name')">
+        Recherche par nom
+    </button>
+    <div *ngIf="search === 'city'">
+        <h3>Recherche par ville</h3>
+        <input [(ngModel)]="searchTermCity" (ngModelChange)="filteredCentersCity()">    
+    </div>
+    <div *ngIf="search === 'name'">
+        <h3>Recherche par nom</h3>
+        <input [(ngModel)]="searchTermName" (ngModelChange)="filteredCentersName()">    
+    </div>
+    <ul>
+        <li *ngFor="let aCenter of searchResult"
+            [ngClass]="selected==aCenter ? 'selected' : ''">
+    
+            <button 
+                [ngStyle]="{'font-weight' : isSpecialCenter(aCenter) ? 'bold' : 'normal'}"
+                (click)="selectCenter(aCenter)">
+                {{aCenter.name}}
+            </button>
+        </li>
+    </ul>
+</div>
 
 <app-vaccination-center [center]="selected"
     (deleted)="onDeleted($event)">
 </app-vaccination-center>
+
 
 <!-- 
 <div *ngIf="selected">
