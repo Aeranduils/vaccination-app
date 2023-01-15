@@ -48,8 +48,18 @@ export class VaccinationCenterListComponent implements OnInit {
     this.searchResult = this.centers.filter(aCenter => aCenter.name.toLowerCase().includes(this.searchTerm!.toLowerCase().toString()));
   }
 
-  selectSearch(search: String){
+  selectSearch(search: string){
     this.search = search
+    let buttonCity = document.getElementById("city");
+    let buttonName = document.getElementById("name");
+    if (search == "city") {
+      buttonName!.style.backgroundColor = "#c5c5c5";
+      buttonCity!.style.backgroundColor = "#999999";
+    }
+    else if (search == "name") {
+      buttonCity!.style.backgroundColor = "#c5c5c5";
+      buttonName!.style.backgroundColor = "#999999";
+    }
   }
 
 }
