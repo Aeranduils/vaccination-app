@@ -9,10 +9,10 @@
 <h2>LISTE DES CENTRES DE VACCINATION</h2>
 
 <div>
-    <button (click)="selectSearch('city'); filteredCenters();">
+    <button id="city" (click)="selectSearch('city'); filteredCenters();">
         Recherche par ville
     </button>
-    <button (click)="selectSearch('name'); filteredCenters();">
+    <button id="name" (click)="selectSearch('name'); filteredCenters();">
         Recherche par nom
     </button>
     <div *ngIf="search !== undefined">
@@ -25,8 +25,8 @@
         <li *ngFor="let aCenter of searchResult"
             [ngClass]="selected==aCenter ? 'selected' : ''">
     
-            <button 
-                [ngStyle]="{'font-weight' : isSpecialCenter(aCenter) ? 'bold' : 'normal'}"
+            <button id="result"
+                [ngStyle]="{'text-decoration-line' : isSpecialCenter(aCenter) ? 'underline' : 'none'}"
                 (click)="selectCenter(aCenter)">
                 {{aCenter.name}}
             </button>
@@ -34,9 +34,16 @@
     </ul>
 </div>
 
-<app-vaccination-center [center]="selected"
+
+<div id="vertical-center">
+    <app-vaccination-center [center]="selected"
     (deleted)="onDeleted($event)">
-</app-vaccination-center>
+    </app-vaccination-center>
+    <button id="router" *ngIf="selected" routerLink="/centers/detail/{{selected.id}}">
+        Aller sur la page du centre
+    </button>
+</div>
+
 
 
 <!-- 

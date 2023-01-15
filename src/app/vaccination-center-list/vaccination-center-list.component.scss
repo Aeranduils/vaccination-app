@@ -1,3 +1,80 @@
-.selected button{
-    background-color: aquamarine;
+#city, #name{
+    background-color: #c5c5c5;
+    color: black;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+}
+
+#city:hover, #name:hover{
+    background-color: #aaaaaa;
+}
+
+input{
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 30px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 50%;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+ul li{
+    padding: 1px;
+    border-radius: 5px;
+}
+
+#result{
+    background-color: #dddddd;
+    color: black;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: 1px solid #aaaaaa;
+    border-radius: 50px;
+}
+
+#result:hover {
+    background-color: #aaaaaa;
+}
+
+#selectedCenter{
+    justify-content: center;
+}
+
+#vertical-center {
+    width: 50%;
+    margin-left: 30px;
+    text-align: center;
+}
+
+#router{
+    background-color: #028bfb;
+    color: white;
+    font-weight: bold;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+#router:hover{
+    background-color: #035da7;
 }
