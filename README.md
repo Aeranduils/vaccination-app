@@ -4,7 +4,7 @@
 Ce projet à pour but de mettre en application le cours de Full Stack et de Mise en Production en mettant en place une application de prise de rendez-vous en ligne similaire à Doctolib. Le répertoire de la partie Back-end est disponible à cette adresse : https://github.com/Aeranduils/covid-api .
 
 ## Enrolement dans le projet (build Docker)
-Pour build le projet il faut se placer dans la racine du projet suivant qui contient le Front, le Back et le Dockerfile: https://github.com/Aeranduils/FullStackRendu
+Pour build le projet il faut se placer dans la racine du projet suivant qui contient le Front, le Back et le Dockerfile : https://github.com/Aeranduils/FullStackRendu
 - docker build -t front ./front
 - docker build -t back ./back
 - docker compose build
