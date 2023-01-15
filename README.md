@@ -1,8 +1,11 @@
 # AngularCovid
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Ce projet à pour but de mettre en application le cours de Full Stack et de Mise en Production en mettant en place une application de prise de rendez-vous en ligne similaire à Doctolib. Le répertoire de la partie Back-end est disponible à cette adresse : https://github.com/Aeranduils/covid-api .
 
-## Development server
+## Liste des fonctionnalités mise en place :
+### Back-end
+- Entity beans avec mapper
+
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
