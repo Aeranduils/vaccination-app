@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  loading = false;
-  submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,18 +21,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      mail: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    this.submitted = true;
-    if(this.loginForm.invalid) {
-      return;
-    }
-    this.loading = true;
-    this.http.post('http://localhost:8000/api/public/connect', this.loginForm.value)
+    this.http.post<any>('http://localhost:8000/api/public/connect', this.loginForm.value)
       .subscribe(
         response => {
           alert('Connect succesful');
