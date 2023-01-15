@@ -1,30 +1,40 @@
 # AngularCovid
+## FRITZ Florian - GRISE Jérémy - GUYOT Antonin
 
 Ce projet à pour but de mettre en application le cours de Full Stack et de Mise en Production en mettant en place une application de prise de rendez-vous en ligne similaire à Doctolib. Le répertoire de la partie Back-end est disponible à cette adresse : https://github.com/Aeranduils/covid-api .
 
 ## Liste des fonctionnalités mise en place :
 ### Back-end
+
 - Entity beans avec mapper
 
+- Couche repository, service et controllers REST
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Basic Auth et endpoint en fonction d'un rôle (public/privé)
 
-## Code scaffolding
+- Configuration micrometer et mise en place de métrique
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- RateLimit via Token Bucket
 
-## Build
+### Front-end
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Création, réutilisation de page et de composants Angular
 
-## Running unit tests
+- Mise en place d'une navigation via router
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Couche de service et appel d'API
 
-## Running end-to-end tests
+- Redirection vers une file d'attente en cas de Token Bucket vide
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Fonctionnalités non implémentées et problèmes rencontrés :
+### Identification
 
-## Further help
+Mise en place d'un formulaire sur le front afin de rentrer les données d'identification. Pas parvenu à utiliser les données entrées afin de s'identifier côté back.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Métrique
+
+Micrometer a été configuré pour compter le nombre de requêtes demandées à l'API. Pas parvenu à accéder à la page Prometheus liées à ces métriques, malgré de nombreuses tentatives (modification de application.yaml, vérification des dépendances, modification de la configuration, ...)
+
+### Mise en production
+
+Pas parvenu à créer le Dockerfile afin de créer l'image. Le fichier ``.jar`` n'était pas trouvé après la compilation du back. Même type d'erreur avec le front, qui se compilait bien mais ne permettait pas de trouver l'exécutable après.
