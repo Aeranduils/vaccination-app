@@ -36,7 +36,7 @@ Ce projet à pour but de mettre en application le cours de Full Stack et de Mise
 
 4. Ouvrir le dossier vaccination-app et exécuter la commande ``npm install`` puis ``ng serve`` dans un terminal. L'application front-end va se compiler puis se lancer.
 
-5. Ouvrir l'application sur localhost://4200 .
+5. Ouvrir l'application sur le [localhost:4200](http://localhost:4200/) .
 
 ## Fonctionnalités non implémentées et problèmes rencontrés :
 ### Identification
