@@ -5,20 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
 import { VaccinationCenterComponent } from './vaccination-center/vaccination-center.component';
 import { VaccinationCenterListComponent } from './vaccination-center-list/vaccination-center-list.component';
 import { ErrorInfosComponent } from './error-infos/error-infos.component';
 import { LoginComponent } from './login/login.component';
+import { CenterDetailComponent } from './center-detail/center-detail.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
     VaccinationCenterComponent,
     VaccinationCenterListComponent,
     ErrorInfosComponent,
-    LoginComponent
+    LoginComponent,
+    CenterDetailComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,

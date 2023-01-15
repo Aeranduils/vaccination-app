@@ -4,20 +4,12 @@ h2{
 }
 
 #vertical-center {
-    width: 50%;
     margin-left: 30px;
     text-align: center;
-    border: 1px solid black;
-    border-radius: 25px;
-    background-color: rgba(255,0,0,0.3);
-}
-
-#vertical-center div{
-    font-size: 30px;
 }
 
 #router{
-    background-color: rgb(255, 80, 80);
+    background-color: #028bfb;
     color: white;
     font-weight: bold;
     padding: 15px 32px;
@@ -30,5 +22,5 @@ h2{
 }
 
 #router:hover{
-    background-color: rgb(255, 0, 0);
+    background-color: #035da7;
 }

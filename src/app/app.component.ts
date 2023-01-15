@@ -17,13 +17,4 @@ export class AppComponent implements OnInit {
     private readonly http: HttpClient,
     private readonly router: Router
   ) {}
-
-  // bucket() {
-  //   this.http.get<any>('api/infos/429', {observe: 'response'}).subscribe({
-  //     error:  (err) => {
-  //       console.log(err.status);
-  //       this.router.navigate(['/infos/429']);
-  //     }
-  //   });
-  // }
 }

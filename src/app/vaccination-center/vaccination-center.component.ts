@@ -30,10 +30,6 @@ export class VaccinationCenterComponent implements OnInit {
   constructor(private route: ActivatedRoute, private service: VaccinationService) { }
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.service.getAllVaccinationCenter().subscribe(resultCenters=>{
-      this.center = resultCenters[id-1];
-    });
   }
 
 }
