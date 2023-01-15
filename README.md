@@ -1,5 +1,5 @@
 # AngularCovid
-## FRITZ Florian - GRISÉ Jérémy - GUYOT Antonin
+## FRITZ Florian (31810971) - GRISÉ Jérémy (31813606) - GUYOT Antonin (31807096)
 
 Ce projet à pour but de mettre en application le cours de Full Stack et de Mise en Production en mettant en place une application de prise de rendez-vous en ligne similaire à Doctolib. Le répertoire de la partie Back-end est disponible à cette adresse : https://github.com/Aeranduils/covid-api .
 
