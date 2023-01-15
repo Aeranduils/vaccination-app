@@ -1,0 +1,11 @@
+<h2>Détail de centre</h2>
+
+<div id="vertical-center">
+    <app-vaccination-center [center]="center">
+    </app-vaccination-center>
+    <button id="router" routerLink="/appointment/{{center!.id}}">
+        Prendre rendez-vous dans ce centre
+    </button>
+</div>
+
+
