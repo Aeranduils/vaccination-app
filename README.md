@@ -28,9 +28,15 @@ Ce projet à pour but de mettre en application le cours de Full Stack et de Mise
 
 ## Enrôlement du projet
 
-1. Ouvrir le dossier covid-api et lancer le back-end en faisant un run java sur CovidApplication.java.
-2. Ouvrir le dossier vaccination-app et exécuter la commande npm install puis ng serve dans un terminal lancer dans le répertoire du projet pour compiler l'application front-end.
-3. Ouvrir l'application localhost://4200
+1. Ouvrir le fichier [application.yaml](https://github.com/Aeranduils/covid-api/blob/master/src/main/resources/application.yaml) et modifier le mot de passe de la base de données si besoin.
+
+2. Ouvrir le dossier covid-api et lancer le back-end en faisant un run java sur CovidApiApplication.java.
+
+3. La base de données se remplira automatiquement avec des centres de vaccination et des utilisateurs que nous avons pré-remplit.
+
+4. Ouvrir le dossier vaccination-app et exécuter la commande ``npm install`` puis ``ng serve`` dans un terminal. L'application front-end va se compiler puis se lancer.
+
+5. Ouvrir l'application sur localhost://4200 .
 
 ## Fonctionnalités non implémentées et problèmes rencontrés :
 ### Identification
