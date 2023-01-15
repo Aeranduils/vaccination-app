@@ -1,11 +1,13 @@
+<h2>Etat du Tocken Bucket</h2>
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="mail">Email</label>
+      <label id="text" for="mail">Email : </label>
       <input type="mail" class="form-control" id="mail" formControlName="mail">
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
+      <label id="text" for="password">Mot de passe : </label>
       <input type="password" class="form-control" id="password" formControlName="password">
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
-  </form>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Valider</button>
+</form>
