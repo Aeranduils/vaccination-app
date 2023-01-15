@@ -3,6 +3,17 @@
 
 Ce projet à pour but de mettre en application le cours de Full Stack et de Mise en Production en mettant en place une application de prise de rendez-vous en ligne similaire à Doctolib. Le répertoire de la partie Back-end est disponible à cette adresse : https://github.com/Aeranduils/covid-api .
 
+## Enrolement dans le projet (build Docker)
+Pour build le projet il faut se placer dans la racine du projet suivant qui contient le Front, le Back et le Dockerfile: https://github.com/Aeranduils/FullStackRendu
+- docker build -t front ./front
+- docker build -t back ./back
+- docker compose build
+- docker compose up
+
+Le container Front et la base de données s'éxecutent normalement.
+Mais le Back emet une erreur : connexion refusée sur le localhost 5432
+En effet, il faut remplacer le localhost de du fichier application.yaml par le nom du container qui est défini dans le docker compose, à savoir : db
+
 ## Liste des fonctionnalités mise en place :
 ### Back-end
 
