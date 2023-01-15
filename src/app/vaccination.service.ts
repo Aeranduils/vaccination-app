@@ -15,7 +15,7 @@ export class VaccinationService {
   ) { }
 
   getAllVaccinationCenter(): Observable<VaccinationCenter[]>{
-    return this.httpClient.get<VaccinationCenter[]>("api/public/centers",{observe: 'response'}).pipe(
+    return this.httpClient.get<VaccinationCenter[]>("api/public/centers/city",{observe: 'response'}).pipe(
       map((resp)=>{
         if(!!resp.body){
           return resp.body
@@ -31,7 +31,7 @@ export class VaccinationService {
   }
 
   getVaccinationCenterByCity(city: string = ""): Observable<VaccinationCenter[]>{
-    return this.httpClient.get<VaccinationCenter[]>("api/public/centers",{
+    return this.httpClient.get<VaccinationCenter[]>("api/public/centers/city",{
       params: {
           "city": city
         }
